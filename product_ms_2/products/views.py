@@ -8,7 +8,7 @@ from . import service
 
 @api_view(['GET'])
 def findAll(request):
-    return service.findAll(request)
+    return service.findAll()
 
 @api_view(['PATCH'])
 def update(request):

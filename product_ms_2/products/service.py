@@ -1,10 +1,13 @@
-from django.http import JsonResponse
+import json
+from django.http import HttpResponse, JsonResponse
+from django.core.serializers import serialize
 
 from .models import Product
 
-
-def findAll(request):
-    return JsonResponse({'msg':'findAll endpoint!'})
+def findAll():
+    products = Product.objects.all()
+    products_json = serialize('json', products)
+    return HttpResponse(products_json, content_type='application/json')
 
 def update(request):
     return JsonResponse({'msg':'update endpoint!'})
