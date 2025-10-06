@@ -16,9 +16,7 @@ def update(request):
 
 @api_view(['POST'])
 def create (request):
-    print(request.data.get('name'))
-    print(request.data.get('description'))
-    return service.create(request)
+    return service.create(request=request)
 
 @api_view(['DELETE'])
 def delete (request):
