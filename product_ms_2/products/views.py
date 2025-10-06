@@ -1,16 +1,18 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 
+from . import service
+
 # Create your views here.
 
 def findAll(request):
-    return JsonResponse({'msg':'findAll endpoint!'})
+    return service.findAll(request)
 
 def update(request):
-    return JsonResponse({'msg':'update endpoint!'})
+    return service.update(request)
 
 def create (request):
-    return JsonResponse({'msg':'create endpoint!'})
+    return service.create(request)
 
 def delete (request):
-    return JsonResponse({'msg':'delete endpoint!'})
+    return service.delete(request)
