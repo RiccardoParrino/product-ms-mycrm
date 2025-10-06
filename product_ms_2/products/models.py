@@ -8,3 +8,6 @@ class Product (models.Model):
     price = models.FloatField()
     stock = models.IntegerField()
     notes = models.CharField(max_length=255)
+
+    def __str__(self):
+        return "name: " + str(self.name) + "\n" + "descr: " + str(self.description) + "\n" + "unit: " + str(self.unit)
