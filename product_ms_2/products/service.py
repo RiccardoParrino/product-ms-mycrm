@@ -60,4 +60,6 @@ def create (request):
     return JsonResponse({'msg':'product inserted!'})
 
 def delete (request):
+    name = request.data.get('name')
+    Product.objects.get(name=name).delete()
     return JsonResponse({'msg':'delete endpoint!'})
